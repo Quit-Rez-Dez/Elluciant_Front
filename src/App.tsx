@@ -9,7 +9,7 @@ import { Button } from '@mui/material';
 
 function App() {
   const [count, setCount] = useState(0)
-  const notify = () => toast('Wow so easy !');
+  const notify = () => toast.error('Wow so easy !');
 
 
   return (
