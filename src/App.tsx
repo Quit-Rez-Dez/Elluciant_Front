@@ -4,12 +4,27 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import { Button } from '@mui/material';
+import Fetchexample from '../src/service/Fetchexample';
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 function App() {
   const [count, setCount] = useState(0)
-  const notify = () => toast('Wow so easy !');
+
+
+  const notify = () => { 
+
+      const id = toast.loading("Please wait...");
+      //do something else
+      toast.update(id, {
+        render: "All is good",
+        type: "success",
+        isLoading: false,
+        autoClose: 2000,
+      });
+  
+  }
 
 
   return (
@@ -36,7 +51,8 @@ function App() {
       </p>
       
         <div className="grid place-items-center max-h-10/12 bg-zinc-900/15">
-      <Button onClick={notify}>Notify !</Button>
+        <Button onClick={notify}>Notify !</Button>
+        <Fetchexample></Fetchexample>
       <ToastContainer />
     </div>
     </>
