@@ -25,6 +25,19 @@ function App() {
       });
     };
 
+  
+  const notify = () => {
+    const id = toast.loading("Please wait...");
+    //do something else
+    toast.update(id, {
+      render: "All is good",
+      type: "success",
+      isLoading: false,
+      autoClose: 2000,
+    });
+  };
+  
+  
   return (
     <>
       <div>
@@ -48,6 +61,13 @@ function App() {
       <div className="grid place-items-center max-h-10/12 bg-zinc-900/15">
         <Fetchexample></Fetchexample>
       </div>
+      <div className="grid place-items-center max-h-10/12 bg-zinc-900/15">
+        <Button onClick={notify}>Notify !</Button>
+        <ToastContainer
+          //  stacked
+          // enableMultiContainer
+        />
+      </div>
       <div style={{ padding: 20 }}>
         <h2>React Toastify v10 Example (Multi-Container)</h2>
         <button onClick={notifyFirst} style={{ marginRight: 10 }}>
@@ -57,7 +77,8 @@ function App() {
 
         {/* Container A */}
         <ToastContainer
-          stacked
+          // enableMultiContainer
+          // stacked
           containerId="A"
           position="top-left"
           autoClose={3000}
@@ -65,7 +86,8 @@ function App() {
 
         {/* Container B */}
         <ToastContainer
-          stacked
+          // enableMultiContainer
+          // stacked
           containerId="B"
           position="top-right"
           autoClose={3000}
