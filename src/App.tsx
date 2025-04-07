@@ -64,7 +64,7 @@ function App() {
       <div className="grid place-items-center max-h-10/12 bg-zinc-900/15">
         <Button onClick={notify}>Notify !</Button>
         <ToastContainer
-          //  stacked
+            stacked
           // enableMultiContainer
         />
       </div>
@@ -78,7 +78,7 @@ function App() {
         {/* Container A */}
         <ToastContainer
           // enableMultiContainer
-          // stacked
+           stacked
           containerId="A"
           position="top-left"
           autoClose={3000}
@@ -87,7 +87,7 @@ function App() {
         {/* Container B */}
         <ToastContainer
           // enableMultiContainer
-          // stacked
+           stacked
           containerId="B"
           position="top-right"
           autoClose={3000}
